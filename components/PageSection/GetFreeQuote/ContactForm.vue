@@ -1,7 +1,5 @@
 <template>
-  <body>
-    <NavigationBar />
-  </body>
+  
 </template>
 
 <script>
