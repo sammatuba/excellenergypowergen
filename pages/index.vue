@@ -1,19 +1,19 @@
 <template>
   <main class="">
-    <section class="">
-      <LazyPageSectionHomeHero />
+    <section class="js-show-on-scroll">
+      <LazyPageHomeHero />
     </section>
-    <section class="">
-      <LazyPageSectionHomeOurSolutions />                   
+    <section class="js-show-on-scroll">
+      <LazyPageHomeOurSolutions />                   
     </section>
-    <section class="">
-      <LazyPageSectionHomeOurProjects />                   
+    <section class="js-show-on-scroll">
+      <LazyPageHomeOurProjects />                   
     </section>
-    <section class="">
-      <LazyPageSectionHomeAboutUs />                   
+    <section class="js-show-on-scroll">
+      <LazyPageHomeAboutUs />                   
     </section>
-    <section class="">
-      <LazyPageSectionHomeOurPartners />                   
+    <section class="js-show-on-scroll">
+      <LazyPageHomeOurPartners />                   
     </section>
 
   <!--
@@ -31,13 +31,5 @@
 
 <script>
 export default {
-  computed: {
-    posts () {
-      return this.$store.state.posts
-    }
-  },
-  created () {
-    this.$store.dispatch('getPosts')
-  }
 }
 </script>

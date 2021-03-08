@@ -3,7 +3,7 @@
         aria-label="Close Menu"
         title="Close Menu"
         class="p-2 -mt-2 -mr-2 transition duration-200 rounded hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
-        @click="onClickButton"
+        @click="$emit('click')"
     >
         <svg class="w-5 text-gray-600" viewBox="0 0 24 24">
         <path
@@ -15,18 +15,6 @@
 </template>
 
 <script>
-export default {
-    props: {
-        isMenuOpen: Boolean
-    },
-
-    methods: {
-        onClickButton (event) {
-            this.$emit('click', )
-        }
-  }
-
-}
 </script>
 
 <style>

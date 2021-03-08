@@ -1,10 +1,5 @@
 <template>
-  <NuxtLink
-    to="/"
-    aria-label="Excell Energy"
-    title="Excell Energy"
-    class="inline-flex items-center FadeIn"
-  >
+  <div class="inline-flex items-center FadeInLogo">
     <svg 
       class="w-8 text-deep-purple-accent-400"
       viewBox="0 0 24 24"
@@ -24,7 +19,7 @@
       class="ml-2 text-xl font-bold tracking-wide text-gray-800 uppercase"
       >Excell Energy</span
     >
-  </NuxtLink>
+  </div>
 </template>
 
 <style>

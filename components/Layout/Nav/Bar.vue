@@ -1,57 +1,72 @@
-<template>
-  <nav class="container flex items-center justify-between">
-    <div class="">
-      <UiLogoTitle />
+  <template>
+  <div class="container">
+    <div class="flex flex-nowrap items-center justify-between">
+      <!-- show Logo Title at all screens -->
+      <NuxtLink
+        @click.native="closeNavMenu"
+        :to="homePage.link"
+        :aria-label="homePage.name"
+        :title="homePage.name"
+      > 
+        <UiLogoTitle/>
+      </NuxtLink>
+      
+      <!-- show Nav Bar in large screens -->
+      <nav class="hidden md:flex flex-initial items-center md:space-x-4 lg:space-x-8">
+        <LayoutNavItem v-for="(page, idx) in MainPages" :key="idx" :page="page">
+          {{ page.name }}
+        </LayoutNavItem>
+      </nav>
+      <UiButton class="flex-initial md:hidden" v-show="!isNavMenuActive" @click="toggleNavMenu"/>
+      <UiButtonClose class="flex-initial md:hidden" v-show="isNavMenuActive" @click="toggleNavMenu"/>
     </div>
-    <div class="hidden md:flex md:space-x-4 lg:space-x-8">
-      <LayoutNavItem v-for="(page, idx) in nonCtaPages" :key="idx" :page="page" :CTA="page.isCTA">{{ page.name }}</LayoutNavItem>
-    </div>
-    <div class="hidden md:flex">
-      <LayoutNavItem :page="CtaPage" :CTA="true">{{ CtaPage.name }}</LayoutNavItem>
-    </div>
-    <div class="flex md:hidden z-50">
-      <LayoutNavButton v-if="!isMenuOpen" @click="isMenuOpen = !isMenuOpen" :isMenuOpen="isMenuOpen"/>
-      <LayoutNavButtonClose v-if="isMenuOpen" @click="isMenuOpen = !isMenuOpen" :isMenuOpen="isMenuOpen"/>
-      <div v-if="isMenuOpen" class="">
-        <div class="block items-center justify-between mb-4">
-          <LayoutNavButtonClose @click="isMenuOpen = !isMenuOpen" :isMenuOpen="isMenuOpen"/>
-        </div>
-        <nav>
-          <div class="space-y-4">
-            <LayoutNavItem class="block" v-for="(page, idx) in MainPages" :key="idx" :page="page" :CTA="false">{{ page.name }}</LayoutNavItem>
-          </div>
-        </nav>
-      </div>
-    </div>
-  </nav>
+    <!-- show Nav Menu in small screens -->
+    <transition
+      enter-active-class="duration-500 ease-out"
+      enter-class="translate-x-full opacity-0"
+      enter-to-class="translate-x-0 opacity-75"
+      leave-active-class="duration-500 ease-in"
+      leave-class="translate-x-0 opacity-75"
+      leave-to-class="translate-x-full opacity-0"
+      mode="out-in"
+    >
+      <nav class="flex-col md:hidden py-4 space-y-4" v-show="isNavMenuActive">
+        <LayoutNavItem :isNavMenu="true" class="block text-center" v-for="(page, idx) in MainPages" :key="idx" :page="page" :CTA="false">
+          {{ page.name }}
+        </LayoutNavItem>
+      </nav>
+    </transition>
+  </div>
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
+
 export default {
-data() {
-    return {
-      MainPages: [
-        {link: '/', name: 'Home', isCTA: false},
-        {link: '/solutions', name: 'Solutions', isCTA: false},
-        {link: '/about', name: 'About', isCTA: false},
-        {link: '/faq', name: 'FAQ', isCTA: false},
-        {link: '/get-free-quote', name: 'Get Free Quote', isCTA: true},
-      ],
-      isMenuOpen: false
-    };
+  props: {
+    MainPages: Array
   },
 
   computed: {
-    nonCtaPages: function() {
-      return this.MainPages.filter(page => page.isCTA === false)
+    ...mapGetters({
+      isNavMenuActive: 'isNavMenuActive'
+    }),
+
+    homePage: function() {
+      return this.MainPages.filter(page => page.name === 'Home')[0]
+    }
+  },
+
+  methods: {
+    toggleNavMenu () {
+      this.$store.commit('toggleNavMenu')
     },
-    CtaPage: function() {
-      return this.MainPages.filter(page => page.isCTA === true)[0]
-    },
+    closeNavMenu () {
+      this.$store.commit('closeNavMenu')
+    }
   }
 }
 </script>
 
 <style>
-
 </style>

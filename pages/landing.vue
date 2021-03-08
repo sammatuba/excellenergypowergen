@@ -68,7 +68,7 @@
             </div>
             </div>
         </div>
-</div>
+      </div>
       <div class="container mx-auto m-8">
         <h1 class="w-full my-2 text-5xl font-bold leading-tight text-center text-gray-800">
           Solutions
