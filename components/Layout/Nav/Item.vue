@@ -1,11 +1,11 @@
 <template>
-  <div 
+  <li 
     @click="closeNavMenu"
-    class="px-2 cursor-pointer fade-in"
+    class="px-4 cursor-pointer fade-in font-bold tracking-wide text-center text-base text-green"
     :class="[
-      {'nav-std': !isNavMenu},
+      {'nav-std': !page.isCTA && !isNavMenu},
       {'nav-cta': page.isCTA && !isNavMenu},
-      {'menu-std': isNavMenu},
+      {'menu-std': !page.isCTA && isNavMenu },
       {'menu-cta': page.isCTA && isNavMenu}
     ]">
       <NuxtLink
@@ -15,7 +15,7 @@
       >
         <slot></slot>
       </NuxtLink>
-  </div>
+  </li>
 </template>
 
 <script>
@@ -44,19 +44,19 @@ export default {
 <style scoped>
 
   .nav-std {
-    @apply text-center font-medium tracking-wide text-green-900 transition-colors duration-200 hover:text-green-700
+    @apply transition-colors duration-200 hover:text-green-lime
   }
 
   .nav-cta {
-    @apply inline-flex font-bold text-green-700 h-10 px-2 items-center transition duration-200 rounded shadow-md hover:bg-green-500 hover:text-gray-100
+    @apply py-2 inline-flex items-center text-gray-50 bg-green duration-200 rounded shadow-md transition-colors hover:bg-green-lime hover:text-gray-50
   }
 
   .menu-std {
-    @apply text-xl text-center font-medium tracking-wide text-green-900 transition-colors duration-200 hover:text-green-700
+    @apply text-green transition-colors duration-200 hover:text-green-lime
   }
 
   .menu-cta {
-    @apply text-green-800 font-bold hover:text-green-700
+    @apply text-green hover:text-green-lime
   }
 
   .fade-in {
@@ -68,4 +68,13 @@ export default {
       opacity: 0;
     }
   }
+
+  .nav-std .exact-active-link {
+    @apply text-green-lime
+  }
+
+  .nav-cta:active {
+    @apply bg-green-lime
+  }
+  
 </style>

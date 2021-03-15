@@ -1,5 +1,18 @@
 <template>
-  <h1>about</h1>
+  <main class="flex-col">
+    <section>
+      <PageAboutCompanyDescription />
+    </section>
+    <section>
+      <PageAboutMissionVision />
+    </section>
+    <section>
+      <PageAboutOurPartners />
+    </section>
+    <section>
+      <PageAboutCommunity />
+    </section>
+  </main>
 </template>
 
 <script>
@@ -7,7 +20,3 @@ export default {
 
 }
 </script>
-
-<style>
-
-</style>

@@ -1,6 +1,6 @@
 <template>
-  <div class="w-full bg-white fixed top-0 z-50 opacity-75">
-    <div class="px-4 py-4 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8"> 
+  <div class="w-full bg-gray-50 fixed top-0 z-50">
+    <div class="px-4 py-3 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8"> 
       <LayoutNavBar :MainPages="MainPages"/>
     </div>
   </div>

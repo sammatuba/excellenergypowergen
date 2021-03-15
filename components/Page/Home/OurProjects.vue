@@ -1,14 +1,16 @@
 <template>
-  <div class="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
-    <div class="max-w-xl mb-6 sm:mx-auto sm:text-center md:mb-10 lg:max-w-2xl">
-      <h2 class="max-w-lg mb-6 font-sans text-3xl text-cemter font-bold tracking-tight text-gray-900 sm:text-4xl sm:leading-none">
+  <section class="page-section">
+    <!-- Heading -->
+    <div class="section-heading">
+      <PageSectionHeading>
         Our Projects
-      </h2>
-      <p class="text-base text-gray-700 md:text-lg">
+      </PageSectionHeading>
+      <PageSectionSubHeading>
         Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque rem aperiam, eaque ipsa quae.
-      </p>
+      </PageSectionSubHeading>
     </div>
     <div class="grid gap-6 row-gap-5 lg:grid-cols-3">
+      <!-- Featured Project 1 -->
       <div>
         <img class="object-cover w-full h-64 mb-6 rounded shadow-lg lg:h-80 xl:h-96" src="https://images.pexels.com/photos/3184311/pexels-photo-3184311.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;w=500" alt="" />
         <h5 class="mb-2 text-xl font-bold leading-none sm:text-2xl">
@@ -18,6 +20,7 @@
           O for awesome, this chocka full cuzzie is as rip-off as a cracker. Meanwhile, in behind the bicycle shed, Hercules Morse.
         </p>
       </div>
+      <!-- Featured Project 2 -->
       <div>
         <img class="object-cover w-full h-64 mb-6 rounded shadow-lg lg:h-80 xl:h-96" src="https://images.pexels.com/photos/3184338/pexels-photo-3184338.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260" alt="" />
         <h5 class="mb-2 text-xl font-bold leading-none sm:text-2xl">
@@ -27,6 +30,7 @@
           I'll be sure to note that in my log. Smooth as an android's bottom, eh, Data? When has justice ever been as simple as a rule book?
         </p>
       </div>
+      <!-- Featured Project 3 -->
       <div>
         <img class="object-cover w-full h-64 mb-6 rounded shadow-lg lg:h-80 xl:h-96" src="https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260" alt="" />
         <h5 class="mb-2 text-xl font-bold leading-none sm:text-2xl">
@@ -37,5 +41,22 @@
         </p>
       </div>
     </div>
-  </div>
+    <div class="float-right">
+      <NuxtLink
+        :to="'/solutions#our-projects'"
+        :aria-label="'Our Projects'"
+        :title="'Our Projects'"
+      >
+        <UiButtonMore>
+          See Our Portfolio
+        </UiButtonMore>
+      </NuxtLink>
+    </div>
+  </section>
 </template>
+
+<script>
+export default {
+  transition: 'section'
+}
+</script>

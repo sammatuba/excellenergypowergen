@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+    
+    /* page transitions */
+    .page-enter-active, .page-leave-active {
+        transition: opacity 0.5s;
+    }
+    .page-enter, .page-leave-to {
+        opacity: 0;
+    }
+    /* layout transitions */
+    .layout-enter-active, .layout-leave-active {
+        transition: opacity 0.5s;
+    }
+    .layout-enter, .layout-leave-active {
+        opacity: 0;
+    }
+
+    /* section transitions */
+    .section-enter-active, .section-leave-active { 
+        transition: opacity 0.5s;
+    }
+    .section-enter, .section-leave-active {
+        opacity: 0;
+    }
+
+    /* page section */
+    .page-section {
+        @apply px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20;
+    }
+
+    /* heading container */
+    .section-heading {
+        @apply max-w-xl mb-10 md:mx-auto sm:text-center lg:max-w-2xl md:mb-12;
+    }
+    
+}

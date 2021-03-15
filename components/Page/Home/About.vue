@@ -1,12 +1,20 @@
 <template>
-  <div class="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
+  <section class="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
+    <!-- Heading -->
+    <div class="max-w-xl mb-10 md:mx-auto sm:text-center lg:max-w-2xl md:mb-12">
+      <PageSectionHeading>
+        About Us
+      </PageSectionHeading>
+      <PageSectionSubHeading>
+        Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque rem aperiam, eaque ipsa quae.
+      </PageSectionSubHeading>
+    </div>
     <div class="grid gap-12 row-gap-8 lg:grid-cols-2">
       <div class="flex flex-col justify-center">
         <div class="max-w-xl mb-6">
-          <h2 class="max-w-lg mb-6 font-sans text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl sm:leading-none">
-            About Us
-          </h2>
           <p class="text-base text-gray-700 md:text-lg">
+            Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae. explicabo.
+            Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae. explicabo.
             Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae. explicabo.
           </p>
         </div>
@@ -43,5 +51,27 @@
         <img class="object-cover w-full h-56 rounded shadow-lg sm:h-96" src="https://images.pexels.com/photos/927022/pexels-photo-927022.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=3&amp;h=750&amp;w=1260" alt="" />
       </div>
     </div>
-  </div>
+    <div class="float-right">
+      <NuxtLink
+        :to="'/about#who-we-are'"
+        :aria-label="'Who We Are'"
+        :title="'Who We Are'"
+      >
+        <UiButtonMore>
+          Get to know us
+        </UiButtonMore>
+      </NuxtLink>
+    </div>
+  </section>
 </template>
+
+<script>
+export default {
+  transition: 'section'
+}
+</script>
+
+<style scoped>
+  .section-enter-active, .section-leave-active { transition: opacity .5s; }
+  .section-enter, .section-leave-active { opacity: 0; }
+</style>

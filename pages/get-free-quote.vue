@@ -1,10 +1,8 @@
 <template>
-    <div class="flex-col md:flex">
-        <keep-alive>
-            <LazyPageGetFreeQuoteForm />
-        </keep-alive>
+    <main class="block md:flex">
+        <LazyPageGetFreeQuoteForm />
         <LazyPageGetFreeQuoteContactDetails />
-    </div>
+    </main>
 </template>
 
 <script>
@@ -12,7 +10,3 @@ export default {
 
 }
 </script>
-
-<style>
-
-</style>

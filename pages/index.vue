@@ -1,21 +1,10 @@
 <template>
-  <main class="">
-    <section class="js-show-on-scroll">
-      <LazyPageHomeHero />
-    </section>
-    <section class="js-show-on-scroll">
-      <LazyPageHomeOurSolutions />                   
-    </section>
-    <section class="js-show-on-scroll">
-      <LazyPageHomeOurProjects />                   
-    </section>
-    <section class="js-show-on-scroll">
-      <LazyPageHomeAboutUs />                   
-    </section>
-    <section class="js-show-on-scroll">
-      <LazyPageHomeOurPartners />                   
-    </section>
-
+  <main>    
+    <PageHomeHero />
+    <PageHomeOurSolutions />
+    <PageHomeOurProjects />
+    <PageHomeAbout />
+    <LazyPageHomeOurPartners />                   
   <!--
     <h2>Posts</h2>
     <div v-for="post in posts" :key="post.id" class="post">

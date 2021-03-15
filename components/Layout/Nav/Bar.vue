@@ -12,24 +12,18 @@
       </NuxtLink>
       
       <!-- show Nav Bar in large screens -->
-      <nav class="hidden md:flex flex-initial items-center md:space-x-4 lg:space-x-8">
-        <LayoutNavItem v-for="(page, idx) in MainPages" :key="idx" :page="page">
-          {{ page.name }}
-        </LayoutNavItem>
+      <nav class="hidden md:flex md:space-x-4 lg:space-x-8">
+        <ul class="flex items-center justify-between space-x-4">
+          <LayoutNavItem :isNavMenu="false" v-for="(page, idx) in MainPages" :key="idx" :page="page">
+            {{ page.name }}
+          </LayoutNavItem>
+        </ul>
       </nav>
-      <UiButton class="flex-initial md:hidden" v-show="!isNavMenuActive" @click="toggleNavMenu"/>
+      <UiButtonHamburger class="flex-initial md:hidden" v-show="!isNavMenuActive" @click="toggleNavMenu"/>
       <UiButtonClose class="flex-initial md:hidden" v-show="isNavMenuActive" @click="toggleNavMenu"/>
     </div>
     <!-- show Nav Menu in small screens -->
-    <transition
-      enter-active-class="duration-500 ease-out"
-      enter-class="translate-x-full opacity-0"
-      enter-to-class="translate-x-0 opacity-75"
-      leave-active-class="duration-500 ease-in"
-      leave-class="translate-x-0 opacity-75"
-      leave-to-class="translate-x-full opacity-0"
-      mode="out-in"
-    >
+    <transition name="navmenu">
       <nav class="flex-col md:hidden py-4 space-y-4" v-show="isNavMenuActive">
         <LayoutNavItem :isNavMenu="true" class="block text-center" v-for="(page, idx) in MainPages" :key="idx" :page="page" :CTA="false">
           {{ page.name }}
@@ -69,4 +63,6 @@ export default {
 </script>
 
 <style>
+  .navmenu-enter-active, .navmenu-leave-active { transition: opacity .5s; }
+  .navmenu-enter, .navmenu-leave-active { opacity: 0; }
 </style>

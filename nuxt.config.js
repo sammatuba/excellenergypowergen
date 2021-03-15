@@ -4,7 +4,7 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'excellenergypowergen',
+    title: 'Excell Energy and Powergen',
     htmlAttrs: {
       lang: 'en'
     },
@@ -50,5 +50,26 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
+  },
+
+  // Tailwind
+   tailwindcss: {
+     cssPath: '~/assets/css/tailwind.css'
+  },
+
+  // Active link
+  router: {
+    linkExactActiveClass: 'exact-active-link'
   }
+  // Nuxt page transitions
+  // layoutTransition: {
+  //  name: 'layout',
+  //  mode: 'out-in'
+  //},
+
+  // Nuxt layout transitions
+  // pageTransition: {
+  //  name: 'page',
+  //  mode: 'out-in'
+  //}
 }
