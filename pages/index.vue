@@ -1,7 +1,7 @@
 <template>
   <div class="flex flex-col w-screen h-screen bg-white justify-center">
     <!--Top-->
-    <div class="flex flex-1 absolute top-0 w-screen justify-center p-4">
+    <div class="flex flex-1 absolute top-0 w-screen justify-center p-4 mx-auto">
       <img
         class="m-0 transform sm:scale-50 mx-auto"
         src="~/assets/main/orig_logo.png"
