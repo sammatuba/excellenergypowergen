@@ -22,7 +22,6 @@
           />
         </svg>
       </div>
-      <h1 class="font-mono text-center text-3xl">https://excell.energy/</h1>
       <h1
         class="
           font-sans font-semibold
