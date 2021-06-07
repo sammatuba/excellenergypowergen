@@ -32,6 +32,7 @@
           bg-gradient-to-b
           from-green-lime
           to-green
+          tracking-wide
         "
       >
         RISING SOON
