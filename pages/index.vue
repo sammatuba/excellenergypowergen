@@ -49,7 +49,7 @@
           />
         </svg>
         <a class="font-semibold font-sans text-center text-2xl"
-        href="tel:63 922 882 0336">
+        href="tel:+639228820336">
           +63 922 882 0336
         </a>
       </div>
