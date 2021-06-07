@@ -1,3 +1,5 @@
+const colors = require('tailwindcss/colors')
+
 module.exports = {
   theme: {
     extend: {
@@ -14,12 +16,17 @@ module.exports = {
           DEFAULT: '#c0ccda',
           light: '#e0e6ed',
           lightest: '#f9fafc',
-        }
+        },
+        'yellow': '#D97706',
       },
-      backgroundImage: theme => ({ 
+      animation: {
+        'spin-slow': 'spin 8s linear infinite',
+      },
+      backgroundImage: theme => ({
         'hero-photo-sun': "url('~/assets/stock_photos/istock-sun-solarpv.jpg')",
         'hero-photo-sunrise': "url('~/assets/stock_photos/istock-sunrise-solarpv.jpg')",
-        'hero-photo-sunset': "url('~/assets/stock_photos/istock-sunset-solarpv.jpg')"
+        'hero-photo-sunset1': "url('~/assets/stock_photos/pexels-pixabay-159397.jpg')",
+        'hero-photo-sunset1': "url('~/assets/stock_photos/istock-sunset-solarpv.jpg')"
       })
     },
   },
